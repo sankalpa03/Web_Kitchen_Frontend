@@ -1,0 +1,433 @@
+/* src/css/profile.css */
+
+:root {
+  /* Colors */
+  --primary-color: #6366f1; /* Indigo 500 */
+  --primary-hover-color: #4f46e5; /* Indigo 600 */
+  --secondary-color: #6b7280; /* Gray 500 */
+  --secondary-hover-color: #4b5563; /* Gray 600 */
+  --success-color: #10b981; /* Emerald 500 */
+  --success-hover-color: #059669; /* Emerald 600 */
+  --warning-color: #f59e0b; /* Amber 500 */
+  --warning-hover-color: #d97706; /* Amber 600 */
+  --danger-color: #ef4444; /* Red 500 */
+  --danger-hover-color: #dc2626; /* Red 600 */
+  --info-color: #3b82f6; /* Blue 500 */
+  --info-hover-color: #2563eb; /* Blue 600 */
+
+  /* Text Colors */
+  --text-primary: #111827; /* Gray 900 */
+  --text-secondary: #374151; /* Gray 700 */
+  --text-muted: #6b7280; /* Gray 500 */
+
+  /* Background Colors */
+  --bg-primary: #f9fafb; /* Gray 50 */
+  --bg-card: #ffffff; /* White */
+  --bg-field-disabled: #e5e7eb; /* Gray 200 for disabled fields */
+  --bg-success-light: #ecfdf5; /* Green 50 for success alerts */
+  --bg-danger-light: #fef2f2; /* Red 50 for danger alerts */
+
+  /* Borders & Shadows */
+  --border-color: #d1d5db; /* Gray 300 */
+  --focus-ring-color: rgba(99, 102, 241, 0.5); /* Indigo 500 with opacity */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+
+
+  /* Border Radii */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.375rem; /* 6px */
+  --border-radius-lg: 0.5rem; /* 8px */
+  --border-radius-full: 9999px; /* For pills/circles */
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+}
+
+/* Base Styles (similar to add.css for consistency) */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Page Layout */
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+.content {
+  max-height: 1%;
+
+}
+
+
+.main-content {
+  flex-grow: 1;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1px; /* Reduced padding to move closer to navbar */
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+/* Profile Card Styling */
+.profile-card-container {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  /* Remove any margin-top if present to keep it close to navbar */
+}
+
+/* Profile Header Section */
+.profile-header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md); /* Gap between text and button group on small screens */
+}
+
+.profile-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-start; /* Align button to start on small screens */
+}
+
+/* Profile Form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg); /* Space between form groups */
+}
+
+.form-group {
+  margin-bottom: 0; /* Handled by flex gap in .profile-form */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+.form-control-disabled {
+  background-color: var(--bg-field-disabled);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.form-control-error {
+  border-color: var(--danger-color);
+}
+
+.input-error-message {
+  font-size: var(--font-size-xs);
+  color: var(--danger-color);
+  margin-top: var(--spacing-xs);
+}
+
+.form-hint {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm); /* Smaller text for profile buttons */
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  text-decoration: none; /* For link-like buttons */
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btn-info { /* Used for Edit Profile button */
+  background-color: var(--info-color);
+  color: white;
+}
+.btn-info:hover {
+  background-color: var(--info-hover-color);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+.btn-success:hover {
+  background-color: var(--success-hover-color);
+}
+
+.btn-secondary-outline {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+.btn-secondary-outline:hover {
+  background-color: var(--bg-field-disabled);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+/* Profile Form Actions */
+.profile-form-actions {
+  padding-top: var(--spacing-md);
+}
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-start; /* Align to left on small screens */
+}
+
+/* Password Toggle Icon in Inputs */
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper .form-control {
+  padding-right: var(--spacing-2xl); /* Make space for the icon */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: var(--text-secondary);
+}
+
+.password-toggle-btn .icon {
+  width: var(--spacing-xl); /* Icon size */
+  height: var(--spacing-xl);
+}
+
+/* Modal Styles (consistent with add.css) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 500px; /* Smaller max-width for password modal */
+  width: 90%; /* Responsive width */
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.open .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.modal-title {
+  font-size: var(--font-size-xl); /* Slightly smaller for modal */
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: var(--font-size-3xl);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.modal-close-btn:hover {
+  color: var(--text-primary);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* Smaller gap for modal form */
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+}
+
+/* Alert Messages (consistent with add.css) */
+.alert-message {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.alert-success {
+  background-color: var(--bg-success-light);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) { /* Equivalent to sm breakpoint in Tailwind */
+  .profile-header-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .profile-actions {
+    justify-content: flex-end;
+  }
+
+  .profile-card-container {
+    padding: var(--spacing-xl) var(--spacing-3xl); /* More horizontal padding on larger screens */
+  }
+
+  .button-group {
+    justify-content: flex-end; /* Align buttons to right on larger screens */
+  }
+
+  .main-content {
+    padding: var(--spacing-xl) var(--spacing-lg); /* More horizontal padding */
+    padding-top: calc(var(--spacing-3xl) + 60px); /* Maintain padding from hypothetical navbar */
+  }
+}
+
+@media (min-width: 768px) { /* Equivalent to md breakpoint in Tailwind */
+  .profile-title {
+    font-size: var(--font-size-3xl);
+  }
+}

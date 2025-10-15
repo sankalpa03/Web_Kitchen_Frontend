@@ -1,0 +1,188 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d; 
+    --star-color-filled: #ffc107; 
+    --star-color-empty: #e0e0e0; 
+    --background-color: #f8f9fa;
+    --card-background-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #555;
+    --border-color: #dee2e6;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-page-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+  }
+  
+  .review-page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
+  
+  .add-review-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--card-background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .add-review-section h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .review-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--light-text-color);
+  }
+  
+  .review-form input[type="text"],
+  .review-form textarea,
+  .review-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .review-form input[type="text"]:focus,
+  .review-form textarea:focus,
+  .review-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .review-form .star-rating-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between label and select */
+  }
+  
+  .review-form .star-rating-input label {
+    margin-bottom: 0; /* Adjust label margin for inline display */
+  }
+  
+  .review-form .star-rating-input select {
+    width: auto; /* Allow select to size based on content */
+    min-width: 80px;
+  }
+  
+  
+  .btn-submit-review {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  .btn-submit-review:hover {
+    background-color: #0056b3;
+  }
+  
+  .reviews-list-section h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .review-item {
+    background-color: var(--card-background-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .review-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .review-author {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+  
+  .review-date {
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+  }
+  
+  .star-rating-display .star {
+    font-size: 1.2rem;
+    margin-right: 2px;
+  }
+  
+  .star-rating-display .star.filled {
+    color: var(--star-color-filled);
+  }
+  
+  .star-rating-display .star.empty {
+    color: var(--star-color-empty);
+  }
+  
+  .review-comment {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--light-text-color);
+    margin-top: 0.5rem;
+  }
+  
+  .no-reviews {
+    text-align: center;
+    color: var(--light-text-color);
+    font-style: italic;
+    padding: 1rem;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #dc3545; /* Bootstrap danger color */
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+  }
